@@ -22,7 +22,7 @@ The API interface must be created using ASP.NET Web API 2+ and/or ASP.NET MVC 5+
 
 The Websocket interface must use Microsoft.WebSockets. The project is already set up to use this via Nuget packages. 
 
-Scaffolding code to use web sockets is included in the project. An instance of the ```Models/WebSocketConnection.cs``` class will be created for every web socket request. This class has ```OnClose```, ```OnOpen```, and ```OnMessage`` stubs for you to implement as needed. 
+Scaffolding code to use web sockets is included in the project. An instance of the ```Models/WebSocketConnection.cs``` class will be created for every web socket request. This class has ```OnClose```, ```OnOpen```, and ```OnMessage``` stubs for you to implement as needed. 
 The ```SendMessage``` function sends a string as a web socket frame to the connected client. 
 
 The default buffer size for the Websocket code is 1024 and is a constant that can be changed in the ```WebSocketHandler``` class. The code as written assumes that complete data is received over the websocket and does not handle partial messages out of the box.
@@ -33,7 +33,7 @@ Persistent data must be stored in Redis 3.2.6. This is available via Docker+Kite
 
 ## Spec
 
-The goal of this project is to create a simple chat system with data persistence in a NoSQL database to allow server restarts without losing state information.
+The goal of this project is to create a simple chat system with a NoSQL database for persistence and Websockets for real-time notifications triggered by data changes.
 
 The basic model of the system is as follows:
 - Clients can create users
@@ -49,11 +49,16 @@ The basic model of the system is as follows:
 - Clients can send messages to chat rooms
   - Users with no membership to a chat room should not be able to send a message to that room
   - All connected clients representing a user with membership to a chat room should receive chat messages for that room
-  - Messages do not need to be persisted between service restarts
+  - Messages do not need to be persisted
 
 ### Design
  
-The provided project has folders for Contracts, Controllers, and Models. Changes to the provided files outside of those folders should not need to be modified, but you are free to make any changes you want to that code as well. Additional folders/subfolders can be created to better organize the code however you see fit.
+The provided project has the following folders where the majority of work is expected to be done:
+- Contracts
+- Controllers
+- Models 
+
+Additional folders/subfolders can be created to better organize the code however you see fit. Changes to the provided files outside of those folders should not be needed, but you are free to make any changes you want to that code as well.
 
 ## Bonus, Not Required
 - Authentication
