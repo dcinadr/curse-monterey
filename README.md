@@ -12,7 +12,7 @@ All HTTP and Websocket communication should be in JSON format.
 
 ### Hosting
 
-The project is set up to use OWIN self-hosting on http://localhost:9000 which can be changed in Program.cs as desired.
+The project is set up to use OWIN self-hosting on http://localhost:9000 which can be changed in ```Program.cs``` as desired.
 
 ### API Interface
 
@@ -25,7 +25,7 @@ The Websocket interface must use Microsoft.WebSockets. The project is already se
 Scaffolding code to use web sockets is included in the project. An instance of the ```Models/WebSocketConnection.cs``` class will be created for every web socket request. This class has ```OnClose```, ```OnOpen```, and ```OnMessage``` stubs for you to implement as needed. 
 The ```SendMessage``` function sends a string as a web socket frame to the connected client. 
 
-The default buffer size for the Websocket code is 1024 and is a constant that can be changed in the ```WebSocketHandler``` class. The code as written assumes that complete data is received over the websocket and does not handle partial messages out of the box.
+The default buffer size for the Websocket code is ```1024``` and is a constant that can be changed in the ```WebSocketHandler``` class. The code as written assumes that complete data is received over the websocket and does not handle partial messages out of the box.
 
 ### Data Storage
 
