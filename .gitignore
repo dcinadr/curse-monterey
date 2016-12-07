@@ -1,0 +1,4 @@
+*.suo
+packages/
+Curse.Monterey.WebService/bin/
+Curse.Monterey.WebService/obj/
