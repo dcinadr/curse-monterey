@@ -51,14 +51,16 @@ The basic model of the system is as follows:
   - All connected clients representing a user with membership to a chat room should receive chat messages for that room
   - Messages do not need to be persisted
 
-### Design
+### Code Organization
  
-The provided project has the following folders where the majority of work is expected to be done:
-- Contracts
-- Controllers
-- Models 
+The majority of work is expected to be done in the typical Web API folders:
+- Contracts - Contracts for API/Websocket interfaces
+- Controllers - API Interface/Service Behavior
+- Models - Data Access/Representation
 
-Additional folders/subfolders can be created to better organize the code however you see fit. Changes to the provided files outside of those folders should not be needed, but you are free to make any changes you want to that code as well.
+Additional or different folders/subfolders can be created to better organize the code however you see fit. 
+
+Changes to the provided files other than ```Models/WebSocketConnection.cs``` should not be needed, but you are free to make any changes you want to that code.
 
 ## Bonus, Not Required
 - Authentication
