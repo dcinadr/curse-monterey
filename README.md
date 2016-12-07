@@ -29,7 +29,7 @@ The default buffer size for the Websocket code is ```1024``` and is a constant t
 
 ### Data Storage
 
-Persistent data must be stored in Redis 3.2.6. This is available via Docker+Kitematic (https://www.docker.com) and is .
+Persistent data must be stored in Redis 3.2.6. This is available via Docker+Kitematic (https://www.docker.com).
 
 ## Spec
 
