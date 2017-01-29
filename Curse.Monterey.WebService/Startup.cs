@@ -27,7 +27,7 @@ namespace Curse.Monterey.WebService
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}");
             appBuilder.UseWebApi(config);
-            appBuilder.Use(UpgradeToWebSockets);
+            //appBuilder.Use(UpgradeToWebSockets);
         }
 
         private Task UpgradeToWebSockets(IOwinContext context, Func<Task> next)
