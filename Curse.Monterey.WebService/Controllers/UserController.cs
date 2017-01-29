@@ -8,16 +8,15 @@ using Curse.Monterey.WebService.Contracts;
 
 namespace Curse.Monterey.WebService.Controllers
 {
-    //[RoutePrefix("api/user")]
-    class UserController : ApiController
+    public class UserController : ApiController
     {
-        //[HttpPost]
-        //[Route("user")]
-        public void Post([FromBody]User user)
+        [HttpPost]
+        [Route("api/user")]
+        public IHttpActionResult Post([FromBody]User user)
         {
 
 
-           // return Ok();
+           return Ok();
         }
     }
 }
